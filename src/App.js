@@ -3,18 +3,21 @@ import {QRCodeSVG} from 'qrcode.react';
 
 const App = () => {
 
-  const [input, setInput] = useState("")
+  const [input, setInput] = useState("");
+  const [qrCode, setQrCode] = useState("");
+  console.log(input)
+  console.log(qrCode)
 
   return (
     <div style={{}}>
       <h2>Qr Code Generator</h2>
       <form action="submit">
-        <input type="text" />
+        <input type="text" value={input} onChange={(e) => setInput(e.target.value)}/>
         <br />
-        <input type='submit' />
+        <input type='submit' onClick={() => setQrCode(input)}/>
       </form>
       <br />
-      <QRCodeSVG value="pavan"/>
+      <QRCodeSVG value={qrCode}/>
     </div>
   )
 }
