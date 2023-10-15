@@ -14,7 +14,7 @@ const App = () => {
       <form action="submit">
         <input type="text" value={input} onChange={(e) => setInput(e.target.value)}/>
         <br />
-        <input type='submit' onClick={(e) => [setQrCode(input), e.preventDefault()]}/>
+        <input type='submit' onClick={(e) => [setQrCode(input), e.preventDefault(), setInput("")]}/>
       </form>
       <br />
       <QRCodeSVG value={qrCode}/>
